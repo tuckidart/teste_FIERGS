@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 
     public void Start()
     {
-        GameManager.Instance.SceneToUnload = "MainMenu";
+        GameManager.Instance.SetSceneToUnload("MainMenu");
         AudioManager.Instance.PlayMainMenuMusic();
     }
 

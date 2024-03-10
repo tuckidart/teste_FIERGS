@@ -5,7 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; } = null;
 
-    public string SceneToUnload = "MainMenu";
+    private string _sceneToUnload = "MainMenu";
+    public string SceneToUnload => _sceneToUnload;
 
     void Awake()
     {
@@ -19,4 +20,6 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadSceneAsync("Systems", LoadSceneMode.Additive);
     }
+
+    public void SetSceneToUnload(string scene) => _sceneToUnload = scene;
 }

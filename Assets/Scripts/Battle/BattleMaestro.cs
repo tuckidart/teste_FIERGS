@@ -41,7 +41,7 @@ public class BattleMaestro : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.SceneToUnload = "Battle";
+        GameManager.Instance.SetSceneToUnload("Battle");
 
         _background.sprite = BattleManager.Instance.Background;
 
