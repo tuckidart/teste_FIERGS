@@ -5,6 +5,8 @@ public class Enemy : Character
 {
     [SerializeField]
     private SpriteRenderer _renderer = null;
+    [SerializeField]
+    private ParticleSystem _blood = null;
 
     private List<Effect> _effects = new List<Effect>();
     private Effect _currentEffect = null;
@@ -35,5 +37,11 @@ public class Enemy : Character
     public void UseEffect()
     {
         BattleMaestro.Instance.ApplyEffect(_currentEffect, this);
+    }
+
+    public override void ReceiveDamage(int damage, bool pierce = false)
+    {
+        base.ReceiveDamage(damage, pierce);
+        _blood.Play();
     }
 }

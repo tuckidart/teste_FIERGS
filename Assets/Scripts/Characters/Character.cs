@@ -15,7 +15,7 @@ public class Character : MonoBehaviour
     protected int _maxArmor = 0;
     protected int _currentArmor = 0;
 
-    public void ReceiveDamage(int damage, bool pierce = false)
+    public virtual void ReceiveDamage(int damage, bool pierce = false)
     {
         if (_currentArmor > 0 && !pierce)
         {
